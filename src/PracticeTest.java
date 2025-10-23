@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class PracticeTest {
 
+    // TODO: Make more tests for maxDiff
     @Test
     void testMaxDiffPositiveAndNegative() {
         // Arrange
@@ -13,8 +14,12 @@ public class PracticeTest {
         int actual = Practice.maxDiff(numbers);
 
         // Assert
+        // Largest: 9, Smallest: -5, Difference: 9 - -5 = 14
         assertEquals(14, actual);
     }
+    
+
+    // TODO: Make tests for each problem you solve
     
 }
 
