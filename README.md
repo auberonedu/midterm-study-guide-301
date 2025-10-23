@@ -39,7 +39,7 @@ Find the difference between the how many odd and even numbers there are in:
 - The values of a HashMap
 - The keys of a HashMap
 
-Find the second-largest :
+Find the second-largest number in:
 - An array
 - An ArrayList
 - A HashSet
