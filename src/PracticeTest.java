@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
 
@@ -44,6 +45,23 @@ public class PracticeTest {
 
     }
     
+      /**
+     *  Count how many words are longer than n characters and shorter than m characters in:
+     * 
+     * @param myMap a non-empty, non-null map of String keys and Value numbers
+     * @return the difference between the largest and smallest number
+     */
+    public static int numberOfWords(HashMap<String, Integer> myMap, int m, int n){
+        int count = 0;
+
+        for(String word: myMap.keySet()){
+            if(word.length() < m && word.length() > n){
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
 
 
