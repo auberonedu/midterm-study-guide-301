@@ -90,6 +90,24 @@ public class PracticeTest {
         assertEquals(0, actual2);
     }
 
+    
+    @Test
+    void testSecondLargestInteger(){
+        HashSet<Integer> mySet = new HashSet<>();
+
+        for(int i = 1 ; i < 11; i++){
+            mySet.add(i);
+        }
+
+        int actual = Practice.secondLargestInteger(mySet);
+
+        mySet.add(11);
+
+        int actual2 = Practice.secondLargestInteger(mySet);
+
+        assertEquals(9,actual);
+        assertEquals(10, actual2);
+    }
 
 }
 

@@ -87,23 +87,22 @@ public class Practice {
         return Math.abs(oddCount - evenCount);
     }
 
-    
-
-      /**
+  
+     /**
      *  Find the second-largest number in:
      * 
      * @param numbers a non-empty, non-null hashmap with integer key and integer value.
      * @return the difference between the largest and smallest number
      */
-    public static int secondLargestInteger(HashMap<Integer, Integer> numbers){
+    public static int secondLargestInteger(HashSet<Integer> numbers){
         int largest = Integer.MIN_VALUE, secondLargest = Integer.MIN_VALUE;
 
-        for(int number : numbers.values()){
+        for(int number : numbers){
             if(number > largest){
                 largest = number;
             }
         }
-         for(int number : numbers.values()){
+         for(int number : numbers){
             if(number > secondLargest && number != largest){
                 secondLargest = number;
             }
