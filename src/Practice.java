@@ -67,22 +67,24 @@ public class Practice {
     }
 
     
-    /**
+    
+ /**
      *  Find the difference between the how many odd and even numbers there are in:
      * 
      * @param numbers a non-empty, non-null hashset
      * @return the difference between the largest and smallest number
      */
-    public static int differenceBetweenOddAndEven(HashSet<Integer> numbers){
-        int oddCount = 0, evenCount = 0;
-        for(int number : numbers){
+    public static int differenceBetweenOddAndEven(HashMap<Integer, Integer> numbers){
+        int oddCount = 0;
+        int evenCount = 0;
+        for(int number : numbers.values()){
             if(number % 2 == 0){
                 evenCount++;
             }else{
                 oddCount++;
             }
         }
-        return oddCount - evenCount;
+        return Math.abs(oddCount - evenCount);
     }
 
     

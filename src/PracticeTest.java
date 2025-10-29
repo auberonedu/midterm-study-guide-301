@@ -72,6 +72,24 @@ public class PracticeTest {
 
     }
 
+     @Test
+    void testDifferenceBetweenOddAndEven(){
+        HashMap<Integer, Integer> myMap = new HashMap<>();
+
+        myMap.put(1,1);
+        myMap.put(2,2);
+        myMap.put(3,2);
+
+        int actual = Practice.differenceBetweenOddAndEven(myMap);
+
+        myMap.put(4,3);
+
+        int actual2 = Practice.differenceBetweenOddAndEven(myMap);
+
+        assertEquals(1, actual);
+        assertEquals(0, actual2);
+    }
+
 
 }
 
