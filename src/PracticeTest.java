@@ -30,35 +30,23 @@ public class PracticeTest {
         assertEquals(13, actual3);
         assertEquals(0, actual4);
     }
-    
+     // TODO: Make tests for each problem you solve
     @Test
-    void testNumberOfWords(){
-        HashMap<String, Integer> map1 = new HashMap<>();
-        map1.put("apple", 1);    
-        map1.put("banana", 2);   
-        map1.put("kiwi", 3);     
-        map1.put("a", 4);        
-        map1.put("orange", 5);   
-        map1.put("grape", 6);    
+    void testGetLongestWord() {
+       ArrayList<String> myList1 = new ArrayList<String>();
+       myList1.add("apple");
+       myList1.add("banana");
+       myList1.add("ant");
+       myList1.add("apricot");
+       myList1.add("bear");
 
+       String actual = Practice.getLongestWord(myList1, 'a');
+        String actual1 = Practice.getLongestWord(myList1, 'b');
 
-        HashMap<String, Integer> map2 = new HashMap<>();
-            map2.put("cat", 1);       
-            map2.put("dog", 2);       
-            map2.put("elephant", 3); 
-
-
-        int actual = Practice.numberOfWords(map1, 6, 3);
-        int actual2 = Practice.numberOfWords(map2, 5, 3);
-        assertEquals(3,actual);
-        assertEquals(0,actual2);
-
-        
-
+        assertEquals("apricot", actual);
+        assertEquals("banana", actual1);
     }
 
-    
-   
 
 }
 
