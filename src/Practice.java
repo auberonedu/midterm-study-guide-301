@@ -5,9 +5,19 @@ public class Practice {
      * @param nums a non-empty, non-null array of numbers
      * @return the difference between the largest and smallest number
      */
-    public static int maxDiff(int[] nums) {
-        // TODO: implement this
-        return -1;
+   public static int maxDifference(int[] nums){
+        int smallest = nums[0], largest = nums[0];
+
+        for(int i = 1; i < nums.length; i++){
+            if(smallest > nums[i]){
+                smallest = nums[i];
+            }
+            if(largest < nums[i]){
+                largest = nums[i];
+            }
+        }
+
+        return largest - smallest;
     }
 
 

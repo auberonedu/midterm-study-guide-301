@@ -11,7 +11,7 @@ public class PracticeTest {
         int[] numbers = {8, -2, 9, -5};
 
         // Act
-        int actual = Practice.maxDiff(numbers);
+        int actual = Practice.maxDifference(numbers);
 
         // Assert
         // Largest: 9, Smallest: -5, Difference: 9 - -5 = 14
