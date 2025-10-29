@@ -8,21 +8,30 @@ import org.junit.jupiter.api.Test;
 
 public class PracticeTest {
 
-    // TODO: Make more tests for maxDiff
+
     @Test
     void testMaxDiffPositiveAndNegative() {
         // Arrange
-        int[] numbers = {8, -2, 9, -5};
+        int[] test1 = {8, -2, 9, -5};
+        int[] test2 = {10, 3, 7, 15, 2};
+        int[] test3 = {-5, 0, 8, -1, 4};
+        int[] test4 = {9, 9, 9};    
+
 
         // Act
-        int actual = Practice.maxDifference(numbers);
-
+        int actual = Practice.maxDifference(test1);
+        int actual2 = Practice.maxDifference(test2);
+        int actual3 = Practice.maxDifference(test3);
+        int actual4 = Practice.maxDifference(test4);
         // Assert
         // Largest: 9, Smallest: -5, Difference: 9 - -5 = 14
         assertEquals(14, actual);
+        assertEquals(13, actual2);
+        assertEquals(13, actual3);
+        assertEquals(0, actual4);
     }
     
-        @Test
+    @Test
     void testNumberOfWords(){
         HashMap<String, Integer> map1 = new HashMap<>();
         map1.put("apple", 1);    
