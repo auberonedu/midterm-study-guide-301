@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class Practice {
     /**
      * Returns the difference between the largest and smallest integer in an array.
@@ -21,9 +25,89 @@ public class Practice {
     }
 
 
-    // TODO: Implement the other methods from the study guide AND tests for each one
+  /**
+     *  Find the longest word that starts with a specific character letter in.
+     * 
+     * @param myList a non-empty, non-null list of numbers
+     * @param target
+     * @return the difference between the largest and smallest number
+     */
+      public static String getLongestWord(ArrayList<String> myList, char target){
+        String currentLongest = "";
+        if(myList.get(0).charAt(0) == target){
+            currentLongest = myList.get(0);
+        }
+        
+        for(int i = 1; i < myList.size(); i++){
+            if(myList.get(i).length() > currentLongest.length() && myList.get(i).charAt(0) == target){
+                currentLongest = myList.get(i);
+            }
+        }
 
-    // For each method you are only required to implement it for one of the data
-    // structures. But use a different data structure for each method. For example,
-    // do maxDiff with an array, the next question with a Set, etc.
+        return currentLongest;
+
+    }
+
+       /**
+     *  Count how many words are longer than n characters and shorter than m characters in:
+     * 
+     * @param myMap a non-empty, non-null map of String keys and Value numbers
+     * @return the difference between the largest and smallest number
+     */
+    public static int numberOfWords(HashMap<String, Integer> myMap, int m, int n){
+        int count = 0;
+
+        for(String word: myMap.keySet()){
+            if(word.length() < m && word.length() > n){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    
+    /**
+     *  Find the difference between the how many odd and even numbers there are in:
+     * 
+     * @param numbers a non-empty, non-null hashset
+     * @return the difference between the largest and smallest number
+     */
+    public static int differenceBetweenOddAndEven(HashSet<Integer> numbers){
+        int oddCount = 0, evenCount = 0;
+        for(int number : numbers){
+            if(number % 2 == 0){
+                evenCount++;
+            }else{
+                oddCount++;
+            }
+        }
+        return oddCount - evenCount;
+    }
+
+    
+
+      /**
+     *  Find the second-largest number in:
+     * 
+     * @param numbers a non-empty, non-null hashmap with integer key and integer value.
+     * @return the difference between the largest and smallest number
+     */
+    public static int secondLargestInteger(HashMap<Integer, Integer> numbers){
+        int largest = Integer.MIN_VALUE, secondLargest = Integer.MIN_VALUE;
+
+        for(int number : numbers.values()){
+            if(number > largest){
+                largest = number;
+            }
+        }
+         for(int number : numbers.values()){
+            if(number > secondLargest && number != largest){
+                secondLargest = number;
+            }
+        }
+
+        return secondLargest;
+
+    }
 }
