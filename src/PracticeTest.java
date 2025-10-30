@@ -67,6 +67,19 @@ public class PracticeTest {
         assertEquals(2, actual);
     }
 
+    @Test
+    void secondLargestNumber() {
+        HashMap<Integer, Integer> numList = new HashMap<>();
+        numList.put(0, 20);
+        numList.put(5, 30);
+        numList.put(10, 50);
+        numList.put (12, 10);
+        numList.put(7, 200);
+
+        int actual = Practice.secondLargestNumber(numList);
+
+        assertEquals(50, actual);
+    }
 }
 
 

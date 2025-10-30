@@ -58,10 +58,20 @@ public class Practice {
         return Math.abs(difference);
     }
 
+    public static int secondLargestNumber(HashMap<Integer, Integer> numList) {
+        int largestNumber = 0;
+        int secondLargestNumber = 0;
+        for(int num : numList.values()) {
+            if(num > secondLargestNumber) {
+                if(num > largestNumber) {
+                    secondLargestNumber = largestNumber;
+                    largestNumber = num;
+                } else {
+                    secondLargestNumber = num;
+                }
+            }
+        }
 
-    // TODO: Implement the other methods from the study guide AND tests for each one
-
-    // For each method you are only required to implement it for one of the data
-    // structures. But use a different data structure for each method. For example,
-    // do maxDiff with an array, the next question with a Set, etc.
+        return secondLargestNumber;
+    }
 }
