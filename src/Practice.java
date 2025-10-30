@@ -46,6 +46,19 @@ public class Practice {
         return wordsInRange;
     }
 
+    public static int differenceBetweenOddAndEven(int[] nums) {
+        int difference = 0;
+        for(int i : nums) {
+            if(i % 2 == 0) {
+                difference++;
+            } else {
+                difference--;
+            }
+        }
+        return Math.abs(difference);
+    }
+
+
     // TODO: Implement the other methods from the study guide AND tests for each one
 
     // For each method you are only required to implement it for one of the data

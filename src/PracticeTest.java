@@ -57,6 +57,16 @@ public class PracticeTest {
 
         assertEquals(actual, 2);
     }
+
+    @Test
+    void evenAndOddDifference() {
+        int[] nums = {0,1,5,6,8,10};
+
+        int actual = Practice.differenceBetweenOddAndEven(nums);
+
+        assertEquals(2, actual);
+    }
+
 }
 
 
