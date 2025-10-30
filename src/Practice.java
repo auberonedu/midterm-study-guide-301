@@ -36,7 +36,16 @@ public class Practice {
         return longestWord;
     }
 
-    
+    public static int countWordsLongerandShorterByKey(HashMap<String, String> wordList, int minChars, int maxChars) {
+        int wordsInRange = 0;
+        for(String word : wordList.keySet()) {
+            if(word.length() > minChars && word.length() < maxChars) {
+                wordsInRange++;
+            }
+        }
+        return wordsInRange;
+    }
+
     // TODO: Implement the other methods from the study guide AND tests for each one
 
     // For each method you are only required to implement it for one of the data

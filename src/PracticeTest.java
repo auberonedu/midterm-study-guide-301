@@ -46,6 +46,17 @@ public class PracticeTest {
         assertEquals(actual, "pen");
     }
 
+    @Test
+    void wordLongerAndShorter() {
+        HashMap<String, String> wordList = new HashMap<>();
+        wordList.put("apple", "pen");
+        wordList.put("orange", "banana");
+        wordList.put("key", "value");
+
+        int actual = Practice.countWordsLongerandShorterByKey(wordList, 4, 8);
+
+        assertEquals(actual, 2);
+    }
 }
 
 
