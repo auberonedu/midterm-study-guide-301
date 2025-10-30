@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Practice {
     /**
      * Returns the difference between the largest and smallest integer in an array.
@@ -19,7 +22,21 @@ public class Practice {
         return highest-lowest;
     }
 
+    public static String longestWordStartsWith(ArrayList<String> wordList, char letter) {
+        String longestWord = "";
+        int longestWordLength = 0;
+        for(String word : wordList) {
+            if(word.substring(0, 1).charAt(0)==letter) {
+                if(word.length() > longestWordLength) {
+                    longestWord = word;
+                    longestWordLength = word.length();
+                }
+            }
+        }
+        return longestWord;
+    }
 
+    
     // TODO: Implement the other methods from the study guide AND tests for each one
 
     // For each method you are only required to implement it for one of the data
