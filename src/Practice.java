@@ -118,4 +118,37 @@ public class Practice {
         }
     }
 
+    /**
+     * Find the second-largest number in the keys of a HashMap
+     * 
+     * @param nums a non-empty, non-null map of numbers, min length = 2
+     * @return the second-largest number in the keys of a HashMap
+     */
+    public static int findSecondLargestNum(Map<Integer, String> nums) {
+        // Store the current largest value
+        int max = Integer.MIN_VALUE;
+        int firstIterMax = Integer.MIN_VALUE;
+
+        // Iterate through the array to find the largest value
+        for (Map.Entry<Integer, String> entry : nums.entrySet()) {
+            if (entry.getKey() > max) {
+                max = entry.getKey();
+                firstIterMax = max;
+            }
+        }
+
+        // Reset max
+        max = Integer.MIN_VALUE;
+
+        // Iterate through the array again finding the largest value that is NOT the current largest
+        for (Map.Entry<Integer, String> entry : nums.entrySet()) {
+            if (entry.getKey() > max && entry.getKey() != firstIterMax) {
+                max = entry.getKey();
+            }
+        }
+
+        // Return the second largest key which is max
+        return max;
+    }
+
 }

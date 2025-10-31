@@ -104,6 +104,42 @@ public class PracticeTest {
         // Assert
         assertEquals(0, actual);
     } 
+
+    @Test
+    void testFindSecondLargestNum_positiveNums() {
+        // Arrange
+        Map<Integer, String> nums = new HashMap<>(Map.of(1, "1", 2, "2", 3, "3", 4, "4"));
+
+        // Act
+        int actual = Practice.findSecondLargestNum(nums);
+
+        // Assert
+        assertEquals(3, actual);
+    }
+
+    @Test
+    void testFindSecondLargestNum_negativeNums() {
+        // Arrange
+        Map<Integer, String> nums = new HashMap<>(Map.of(-1, "-1", -2, "-2", -3, "-3", -4, "-4"));
+
+        // Act
+        int actual = Practice.findSecondLargestNum(nums);
+
+        // Assert
+        assertEquals(-2, actual);
+    }
+
+    @Test
+    void testFindSecondLargestNum_twoNums() {
+        // Arrange
+        Map<Integer, String> nums = new HashMap<>(Map.of(-1, "-1", -2, "-2"));
+
+        // Act
+        int actual = Practice.findSecondLargestNum(nums);
+
+        // Assert
+        assertEquals(-2, actual);
+    }
 }
 
 
