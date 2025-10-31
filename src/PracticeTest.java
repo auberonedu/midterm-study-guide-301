@@ -1,6 +1,5 @@
 import static org.junit.Assert.*;
 import java.util.*;
-import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -56,6 +55,30 @@ public class PracticeTest {
 
         // Assert
         assertEquals("hooo", actual);
+    }
+
+    @Test
+    void testWordCount_oneRightWord() {
+        // Arrange
+        List<String> words = new ArrayList<>(Arrays.asList("he", "genes", "worlds", "counter"));
+
+        // Act
+        int actual = Practice.wordCount(words, 1, 3);
+
+        // Assert
+        assertEquals(1, actual);
+    }
+
+    @Test
+    void testWordCount_noRightWords() {
+        // Arrange
+        List<String> words = new ArrayList<>(Arrays.asList("hello", "genes", "worlds", "counter"));
+
+        // Act
+        int actual = Practice.wordCount(words, 1, 3);
+
+        // Assert
+        assertEquals(0, actual);
     }
 }
 

@@ -36,7 +36,7 @@ public class Practice {
     /**
      * Find the longest word that starts with a specific character letter in a HashSet
      * 
-     * @param words a non-empty, non-null set of numbers
+     * @param words a non-empty, non-null set of strings
      * @param character a non-empty, non-null character value
      * @return the longest word that starts with a specific character letter
      */
@@ -58,4 +58,28 @@ public class Practice {
         // Return the longest word in the set
         return longestStr;
     }
+
+    /**
+     * Count how many words are longer than n characters and shorter than m characters in a ArrayList
+     * 
+     * @param words a non-empty, non-null set of strings
+     * @param n a integer value that defines max length of the word
+     * @param m a integer value that defines the min length of the word
+     * @return how many words are longer than n characters and shorter than m characters
+     */
+    public static int wordCount(List<String> words, int n, int m) {
+        // Variable to track word count
+        int count = 0;
+
+        // Iterate through every word in the words array
+        for (String word : words) {
+            if (word.length() > n && word.length() < m) {
+                count++;
+            }
+        }
+
+        // Return the word count
+        return count;
+    }
+
 }
