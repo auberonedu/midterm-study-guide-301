@@ -80,6 +80,30 @@ public class PracticeTest {
         // Assert
         assertEquals(0, actual);
     }
+
+    @Test
+    void testCountEvenOdd_moreOdds() {
+        // Arrange
+        Map<String, Integer> nums = new HashMap<>(Map.of("1", 1, "2", 2,  "3", 3, "4", 4, "5", 5));
+
+        // Act
+        int actual = Practice.countEvenOdd(nums);
+
+        // Assert
+        assertEquals(1, actual);
+    }
+
+    @Test
+    void testCountEvenOdd_equalCount() {
+        // Arrange
+        Map<String, Integer> nums = new HashMap<>(Map.of("1", 1, "2", 2,  "3", 3, "4", 4));
+
+        // Act
+        int actual = Practice.countEvenOdd(nums);
+
+        // Assert
+        assertEquals(0, actual);
+    } 
 }
 
 

@@ -62,7 +62,7 @@ public class Practice {
     /**
      * Count how many words are longer than n characters and shorter than m characters in a ArrayList
      * 
-     * @param words a non-empty, non-null set of strings
+     * @param words a non-empty, non-null list of strings
      * @param n a integer value that defines max length of the word
      * @param m a integer value that defines the min length of the word
      * @return how many words are longer than n characters and shorter than m characters
@@ -80,6 +80,42 @@ public class Practice {
 
         // Return the word count
         return count;
+    }
+
+    /**
+     * Find the difference between how many odd and even numbers there are in the values of a HashMap
+     * 
+     * @param nums a non-empty, non-null map of numbers
+     * @return the difference between how many odd and even numbers there are in the values of a HashMap
+     */
+    public static int countEvenOdd(Map<String, Integer> nums) {
+        // Variables to store even odd counts
+        int evens = 0;
+        int odds = 0;
+
+        // Iterate through the map looking at the values
+        for (Map.Entry<String, Integer> entry : nums.entrySet()) {
+            // Store values in their own variables
+            int value = entry.getValue();
+
+            // Check for even/odd and add to count accordingly
+            if ((value % 2) == 0) {
+                // Value is even
+                evens++;
+            } else {
+                // Value is odd
+                odds++;
+            }
+        }
+
+        // Make sure difference is always positive or 0
+        if (odds > evens) {
+            return odds - evens;
+        } else if (odds < evens) {
+            return evens - odds;
+        } else {
+            return 0;
+        }
     }
 
 }
