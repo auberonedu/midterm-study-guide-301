@@ -18,6 +18,18 @@ public class PracticeTest {
         assertEquals(14, actual);
     }
     
+    @Test
+    void testMaxDiffAllPositive() {
+        // Arrange
+        int[] numbers = {8, 15, 9, 10};
+
+        // Act
+        int actual = Practice.maxDiff(numbers);
+
+        // Assert
+        // Largest: 15, Smallest: 8, Difference: 15-8 = 7
+        assertEquals(7, actual);
+    }
 
     // TODO: Make tests for each problem you solve
     

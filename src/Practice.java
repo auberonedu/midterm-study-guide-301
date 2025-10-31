@@ -7,7 +7,23 @@ public class Practice {
      */
     public static int maxDiff(int[] nums) {
         // TODO: implement this
-        return -1;
+        // Variables to track max, min
+        int min = nums[0];
+        int max = nums[0];
+
+        // Iterate through the list array
+        for (int i = 0; i < nums.length; i++) {
+            // Compare the current number to max stored and min stored
+            if (nums[i] > max) {
+                max = nums[i];
+            }
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+        }
+
+        // Return the difference between the largest and smallest value in the integer array
+        return (max - min);
     }
 
 
