@@ -1,4 +1,6 @@
 import static org.junit.Assert.*;
+import java.util.*;
+import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +8,7 @@ public class PracticeTest {
 
     // TODO: Make more tests for maxDiff
     @Test
-    void testMaxDiffPositiveAndNegative() {
+    void testMaxDiff_PositiveAndNegative() {
         // Arrange
         int[] numbers = {8, -2, 9, -5};
 
@@ -19,7 +21,7 @@ public class PracticeTest {
     }
     
     @Test
-    void testMaxDiffAllPositive() {
+    void testMaxDiff_AllPositive() {
         // Arrange
         int[] numbers = {8, 15, 9, 10};
 
@@ -32,7 +34,29 @@ public class PracticeTest {
     }
 
     // TODO: Make tests for each problem you solve
-    
+    @Test
+    void testLongestWordWithChracter_AllDifferentSize() {
+        // Arrange
+        Set<String> words = new HashSet<>(Arrays.asList("Helicopter", "hey", "hello"));
+
+        // Act
+        String actual = Practice.longestWordWithCharacter(words, 'H');
+
+        // Assert
+        assertEquals("Helicopter", actual);
+    }
+
+    @Test
+    void testLongestWordWithChracter_TwoSameSize() {
+        // Arrange
+        Set<String> words = Set.of("hoy", "hey", "hooo");
+
+        // Act
+        String actual = Practice.longestWordWithCharacter(words, 'H');
+
+        // Assert
+        assertEquals("hooo", actual);
+    }
 }
 
 
