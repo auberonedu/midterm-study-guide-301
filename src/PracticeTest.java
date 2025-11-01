@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +36,7 @@ public class PracticeTest {
      // TODO: Make tests for each problem you solve
     @Test
     void testGetLongestWord() {
-       ArrayList<String> myList1 = new ArrayList<String>();
+       List<String> myList1 = new ArrayList<String>();
        myList1.add("apple");
        myList1.add("banana");
        myList1.add("ant");
@@ -50,7 +53,7 @@ public class PracticeTest {
     
    @Test
     void testNumberOfWords(){
-        HashMap<String, Integer> map1 = new HashMap<>();
+        Map<String, Integer> map1 = new HashMap<>();
         map1.put("apple", 1);    
         map1.put("banana", 2);   
         map1.put("kiwi", 3);     
@@ -59,7 +62,7 @@ public class PracticeTest {
         map1.put("grape", 6);    
 
 
-        HashMap<String, Integer> map2 = new HashMap<>();
+        Map<String, Integer> map2 = new HashMap<>();
             map2.put("cat", 1);       
             map2.put("dog", 2);       
             map2.put("elephant", 3); 
@@ -74,7 +77,7 @@ public class PracticeTest {
 
      @Test
     void testDifferenceBetweenOddAndEven(){
-        HashMap<Integer, Integer> myMap = new HashMap<>();
+        Map<Integer, Integer> myMap = new HashMap<>();
 
         myMap.put(1,1);
         myMap.put(2,2);
@@ -93,7 +96,7 @@ public class PracticeTest {
     
     @Test
     void testSecondLargestInteger(){
-        HashSet<Integer> mySet = new HashSet<>();
+        Set<Integer> mySet = new HashSet<>();
 
         for(int i = 1 ; i < 11; i++){
             mySet.add(i);
