@@ -11,48 +11,72 @@ import org.junit.jupiter.api.Test;
 
 public class PracticeTest {
 
-
     @Test
-    void testMaxDiffPositiveAndNegative() {
-        // Arrange
+    void testMaxDifferenceWithPositiveAndNegative() {
         int[] test1 = {8, -2, 9, -5};
-        int[] test2 = {10, 3, 7, 15, 2};
-        int[] test3 = {-5, 0, 8, -1, 4};
-        int[] test4 = {9, 9, 9};    
-
-
-        // Act
+        
         int actual = Practice.maxDifference(test1);
-        int actual2 = Practice.maxDifference(test2);
-        int actual3 = Practice.maxDifference(test3);
-        int actual4 = Practice.maxDifference(test4);
-        // Assert
-        // Largest: 9, Smallest: -5, Difference: 9 - -5 = 14
+        
         assertEquals(14, actual);
-        assertEquals(13, actual2);
-        assertEquals(13, actual3);
-        assertEquals(0, actual4);
     }
-     // TODO: Make tests for each problem you solve
+
     @Test
-    void testGetLongestWord() {
-       List<String> myList1 = new ArrayList<String>();
-       myList1.add("apple");
-       myList1.add("banana");
-       myList1.add("ant");
-       myList1.add("apricot");
-       myList1.add("bear");
-
-       String actual = Practice.getLongestWord(myList1, 'a');
-        String actual1 = Practice.getLongestWord(myList1, 'b');
-
-        assertEquals("apricot", actual);
-        assertEquals("banana", actual1);
+    void testMaxDifferenceWithAllPositive() {
+        int[] test2 = {10, 3, 7, 15, 2};
+        
+        int actual = Practice.maxDifference(test2);
+        
+        assertEquals(13, actual);
     }
 
-    
-   @Test
-    void testNumberOfWords(){
+    @Test
+    void testMaxDifferenceWithNegativeZeroAndPositive() {
+        int[] test3 = {-5, 0, 8, -1, 4};
+        
+        int actual = Practice.maxDifference(test3);
+        
+        assertEquals(13, actual);
+    }
+
+    @Test
+    void testMaxDifferenceWithAllSameValues() {
+        int[] test4 = {9, 9, 9};
+        
+        int actual = Practice.maxDifference(test4);
+        
+        assertEquals(0, actual);
+    }
+
+    @Test
+    void testGetLongestWordStartingWithA() {
+        List<String> myList1 = new ArrayList<String>();
+        myList1.add("apple");
+        myList1.add("banana");
+        myList1.add("ant");
+        myList1.add("apricot");
+        myList1.add("bear");
+
+        String actual = Practice.getLongestWord(myList1, 'a');
+        
+        assertEquals("apricot", actual);
+    }
+
+    @Test
+    void testGetLongestWordStartingWithB() {
+        List<String> myList1 = new ArrayList<String>();
+        myList1.add("apple");
+        myList1.add("banana");
+        myList1.add("ant");
+        myList1.add("apricot");
+        myList1.add("bear");
+
+        String actual = Practice.getLongestWord(myList1, 'b');
+        
+        assertEquals("banana", actual);
+    }
+
+    @Test
+    void testNumberOfWordsWithMultipleMatches() {
         Map<String, Integer> map1 = new HashMap<>();
         map1.put("apple", 1);    
         map1.put("banana", 2);   
@@ -61,57 +85,74 @@ public class PracticeTest {
         map1.put("orange", 5);   
         map1.put("grape", 6);    
 
-
-        Map<String, Integer> map2 = new HashMap<>();
-            map2.put("cat", 1);       
-            map2.put("dog", 2);       
-            map2.put("elephant", 3); 
-
-
         int actual = Practice.numberOfWords(map1, 6, 3);
-        int actual2 = Practice.numberOfWords(map2, 5, 3);
-        assertEquals(3,actual);
-        assertEquals(0,actual2);
-
+        
+        // Assert
+        assertEquals(3, actual);
     }
 
-     @Test
-    void testDifferenceBetweenOddAndEven(){
-        Map<Integer, Integer> myMap = new HashMap<>();
+    @Test
+    void testNumberOfWordsWithNoMatches() {
+        Map<String, Integer> map2 = new HashMap<>();
+        map2.put("cat", 1);       
+        map2.put("dog", 2);       
+        map2.put("elephant", 3); 
 
-        myMap.put(1,1);
-        myMap.put(2,2);
-        myMap.put(3,2);
+        // Act
+        int actual = Practice.numberOfWords(map2, 5, 3);
+        
+        // Assert
+        assertEquals(0, actual);
+    }
+
+    @Test
+    void testDifferenceBetweenOddAndEvenWithUnequalCounts() {
+        Map<Integer, Integer> myMap = new HashMap<>();
+        myMap.put(1, 1);
+        myMap.put(2, 2);
+        myMap.put(3, 2);
 
         int actual = Practice.differenceBetweenOddAndEven(myMap);
 
-        myMap.put(4,3);
-
-        int actual2 = Practice.differenceBetweenOddAndEven(myMap);
-
         assertEquals(1, actual);
-        assertEquals(0, actual2);
     }
 
-    
     @Test
-    void testSecondLargestInteger(){
-        Set<Integer> mySet = new HashSet<>();
+    void testDifferenceBetweenOddAndEvenWithEqualCounts() {
+        // Arrange
+        Map<Integer, Integer> myMap = new HashMap<>();
+        myMap.put(1, 1);
+        myMap.put(2, 2);
+        myMap.put(3, 2);
+        myMap.put(4, 3);
 
-        for(int i = 1 ; i < 11; i++){
+        int actual = Practice.differenceBetweenOddAndEven(myMap);
+
+        // Assert
+        assertEquals(0, actual);
+    }
+
+    @Test
+    void testSecondLargestIntegerWithTenElements() {
+        Set<Integer> mySet = new HashSet<>();
+        for(int i = 1; i < 11; i++){
             mySet.add(i);
         }
 
         int actual = Practice.secondLargestInteger(mySet);
 
-        mySet.add(11);
-
-        int actual2 = Practice.secondLargestInteger(mySet);
-
-        assertEquals(9,actual);
-        assertEquals(10, actual2);
+        assertEquals(9, actual);
     }
 
+    @Test
+    void testSecondLargestIntegerWithElevenElements() {
+        Set<Integer> mySet = new HashSet<>();
+        for(int i = 1; i < 12; i++){
+            mySet.add(i);
+        }
+
+        int actual = Practice.secondLargestInteger(mySet);
+
+        assertEquals(10, actual);
+    }
 }
-
-
